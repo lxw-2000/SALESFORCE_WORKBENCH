@@ -1,0 +1,45 @@
+/*
+ * @Author: lxw2000 1780870263@qq.com
+ * @Date: 2022-09-20 17:36:23
+ * @LastEditors: lxw2000
+ * @LastEditTime: 2022-09-21 15:36:06
+ * @FilePath: \SALESFORCE_WORKBENCH\force-app\main\default\pages\RemoteActionModelPage.page
+ * @Description: 
+ * 
+ * Copyright (c) 2022 by lxw2000 1780870263@qq.com, All Rights Reserved. 
+ */
+<apex:page controller="RemoteActionDemoCls">
+    <script type="text/javascript">
+        function callRemoteAction() {
+            var rId = '0015i00000MLQrZAAX';
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.RemoteActionDemoCls.getAccount}',
+                rId,
+                function (result, event) {
+                    if (event.status) {
+                        var account = result;
+                        console.log('Response is : ' + JSON.stringify(account));
+                        console.log('Account Name is : ' + account.Name);
+                        console.log('Account Owner Name is : ' + account.Owner.Name);
+                    } else {
+                        alert(event.message);
+                    }
+                },
+                { escape: true }
+            );
+            //Also can use the below way if you don't warry about NameSpace
+            /* 
+              RemoteActionDemoCls.getAccount(
+                    rId,
+                function(result, event){
+                  //do something...
+                },
+                {escape: true}
+                );
+             */
+        }
+    </script>
+    <apex:pageblock title="A RemoteAction Demo Page">
+        <input type="button" onclick="callRemoteAction();" value="Call RemoteAction" />
+    </apex:pageblock>
+</apex:page>
