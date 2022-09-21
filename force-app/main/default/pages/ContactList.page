@@ -1,3 +1,15 @@
+/*
+ * @Author: lxw2000 1780870263@qq.com
+ * @Date: 2022-09-07 10:44:17
+ * @LastEditors: lxw2000
+ * @LastEditTime: 2022-09-07 22:11:59
+ * @FilePath: \SALESFORCE_WORKBENCH\force-app\main\default\pages\ContactList.page
+ * @Description: 
+ * 
+ * Copyright (c) 2022 by lxw2000 1780870263@qq.com, All Rights Reserved. 
+ */
+
+
 <apex:page standardController="Contact" recordSetVar="contacts">
     <apex:form >
         <apex:pageBlock title="Contacts List" id="contacts_list">
