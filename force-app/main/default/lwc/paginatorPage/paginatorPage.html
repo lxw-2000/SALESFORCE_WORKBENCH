@@ -2,7 +2,7 @@
  * @Author: lxw2000 1780870263@qq.com
  * @Date: 2022-09-22 15:35:31
  * @LastEditors: lxw2000
- * @LastEditTime: 2022-09-22 16:55:14
+ * @LastEditTime: 2022-09-22 17:03:11
  * @FilePath: \SALESFORCE_WORKBENCH\force-app\main\default\lwc\paginatorPage\paginatorPage.html
  * @Description: 
  * 
@@ -11,7 +11,7 @@
 <template>
   <lightning-card title="EventSimple" icon-name="custom:custom1">
     <div class="slds-m-around_medium">
-      <p class="slds-m-vertical_medium content">Page is {page}</p>
+      <p class="slds-m-vertical_medium content">Page: {page}</p>
       <c-paginator
         onprevious={previousHandler}
         onnext={nextHandler}
