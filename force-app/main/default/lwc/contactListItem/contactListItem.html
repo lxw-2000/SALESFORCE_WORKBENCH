@@ -1,0 +1,19 @@
+<!--
+ * @Author: lxw2000 1780870263@qq.com
+ * @Date: 2022-09-22 22:46:09
+ * @LastEditTime: 2022-09-23 11:26:50
+ * @FilePath: \SALESFORCE_WORKBENCH\force-app\main\default\lwc\contactListItem\contactListItem.html
+ * @Description: 
+-->
+<template>
+  <a href="#" onclick={handleClick}>
+    <lightning-layout vertical-align="center">
+      <lightning-layout-item>
+        <img src={contact.Picture__c} alt="Profile photo" />
+      </lightning-layout-item>
+      <lightning-layout-item padding="around-small">
+        <p>{contact.Name}</p>
+      </lightning-layout-item>
+    </lightning-layout>
+  </a>
+</template>
